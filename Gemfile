@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 gem 'thin'
 gem 'pg'
+gem 'therubyracer'
+gem "twitter-bootstrap-rails"
+gem "paperclip"
+gem "ckeditor"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

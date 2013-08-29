@@ -1,0 +1,29 @@
+<%= form_for @scheme, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.cktext_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :ministry, :class => 'control-label' %>
+    <div class="controls">
+      <% if @ministry %> <dd> <%=@ministry%> </dd>
+      <% else %> <%= f.collection_select( :ministry_id, Ministry.all, :id, :name) %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                schemes_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%- model_class = Ministry -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "Ministry of #{@ministry.name}" %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ministry.schemes.each do |scheme| %>
+      <tr>
+        <td><%= link_to scheme.title, scheme %></td>
+        <td>
+          <% unless scheme.description.blank? %>
+            <div class = 'short-desc'><%= raw scheme.description %></div>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_scheme_path(scheme), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              ministries_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_ministry_path(@ministry), :class => 'btn' %>
+
+</div>

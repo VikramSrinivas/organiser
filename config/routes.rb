@@ -1,4 +1,11 @@
 Ias::Application.routes.draw do
+
+  match '/' => 'home#show'
+  resources :schemes
+  resources :ministries
+
+  mount Ckeditor::Engine => "/ckeditor"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

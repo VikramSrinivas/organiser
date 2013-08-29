@@ -35,35 +35,8 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
-    <style type="text/css">
-    .page-header {
-      margin-top:50px;
-    }
-    </style>
   </head>
   <body>
-  <div id = 'wrap'>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">IAS</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Trello", "http://trello.com/b/xssb0rak/civil-services-prep"  %></li>
-              <li><%= link_to "UPSC", "http://www.upsc.gov.in"  %></li>
-              <li><%= link_to "Ministries", ministries_path  %></li>
-              <li><%= link_to "Schemes", schemes_path  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
 
     <div class="container">
         <div class="row">
@@ -71,14 +44,13 @@
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-        </div><!--/row-->
-      <div id="push"></div>
-    </div>  <!-- /container -->
-  </div> <!-- /wrap -->
 
-  <div class = 'footer'>
-    <p>&copy; Vikram Srinivas 2013</p>
-  </div> <!-- /footer -->
+
+      <footer>
+        <p>&copy; Vikram Srinivas 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
 
   </body>
 </html>

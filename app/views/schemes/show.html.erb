@@ -1,0 +1,22 @@
+<%- model_class = Scheme -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => @scheme.title.titleize%></h1>
+  <h4><%= link_to "Ministry of #{@scheme.ministry.name}", @scheme.ministry %></h4>
+
+</div>
+
+<dl class="dl-horizontal">
+  <%= raw @scheme.description %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              schemes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_scheme_path(@scheme), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              scheme_path(@scheme),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
