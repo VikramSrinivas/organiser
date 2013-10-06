@@ -8,16 +8,14 @@
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.cktext_area :description, :class => 'text_area' %>
+      <%= f.text_area :description, :class => 'ckeditor' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :ministry, :class => 'control-label' %>
     <div class="controls">
-      <% if @ministry %> <dd> <%=@ministry%> </dd>
-      <% else %> <%= f.collection_select( :ministry_id, Ministry.all, :id, :name) %>
-      <% end %>
+      <%= f.collection_select :ministry_id, Ministry.all, :id, :name, @ministry_id ? {selected: @ministry_id} : {} %>
     </div>
   </div>
 

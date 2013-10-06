@@ -1,10 +1,16 @@
-Ias::Application.routes.draw do
+Organiser::Application.routes.draw do
 
-  match '/' => 'home#show'
   resources :schemes
   resources :ministries
-
+  get '/' => 'home#show'
   mount Ckeditor::Engine => "/ckeditor"
+
+  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
+
+  # Make sure this routeset is defined last
+  ComfortableMexicanSofa::Routing.content(:path => '/ias', :sitemap => false)
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

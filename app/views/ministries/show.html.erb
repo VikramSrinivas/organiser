@@ -3,6 +3,10 @@
   <h1><%=t '.title', :default => "Ministry of #{@ministry.name}" %></h1>
 </div>
 
+<dl class="dl-horizontal">
+  <%= raw @ministry.description %>
+</dl>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -35,5 +39,8 @@
               ministries_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_ministry_path(@ministry), :class => 'btn' %>
+  <%= link_to 'Add Scheme',
+              new_scheme_path(:ministry_id => @ministry.id), :class => 'btn' %>
+
 
 </div>

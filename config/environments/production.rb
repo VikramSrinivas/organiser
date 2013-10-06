@@ -1,5 +1,10 @@
-Ias::Application.configure do
+Organiser::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+
+  config.eager_load = true
+
+  # Compress JavaScripts and CSS
+  config.assets.js_compressor = :uglifier
 
   # Code is not reloaded between requests
   config.cache_classes = true

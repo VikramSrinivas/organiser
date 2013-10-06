@@ -26,9 +26,9 @@ class SchemesController < ApplicationController
   def new
     @scheme = Scheme.new
     if params[:ministry_id]
-      @ministry = Ministry.find(params[:ministry_id]).name
+      @ministry_id = params[:ministry_id]
     else
-      @ministry = false
+      @ministry_id = false
     end
     respond_to do |format|
       format.html # new.html.erb
@@ -45,7 +45,6 @@ class SchemesController < ApplicationController
   # POST /schemes.json
   def create
     @scheme = Scheme.new(params[:scheme])
-
     respond_to do |format|
       if @scheme.save
         format.html { redirect_to @scheme, notice: 'Scheme was successfully created.' }

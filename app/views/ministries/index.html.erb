@@ -21,7 +21,8 @@
         <td>
           <%= link_to 'Add Scheme',
                       new_scheme_path(:ministry_id => ministry.id), :class => 'btn btn-mini' %>
-
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ministry_path(ministry), :class => 'btn btn-mini' %>
         </td>
       </tr>
     <% end %>
