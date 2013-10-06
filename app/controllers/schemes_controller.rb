@@ -44,7 +44,7 @@ class SchemesController < ApplicationController
   # POST /schemes
   # POST /schemes.json
   def create
-    @scheme = Scheme.new(params[:scheme])
+    @scheme = Scheme.new(scheme_params)
     respond_to do |format|
       if @scheme.save
         format.html { redirect_to @scheme, notice: 'Scheme was successfully created.' }
@@ -62,7 +62,7 @@ class SchemesController < ApplicationController
     @scheme = Scheme.find(params[:id])
 
     respond_to do |format|
-      if @scheme.update_attributes(params[:scheme])
+      if @scheme.update_attributes(scheme_params)
         format.html { redirect_to @scheme, notice: 'Scheme was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,5 +82,10 @@ class SchemesController < ApplicationController
       format.html { redirect_to schemes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def scheme_params
+    params.require(:scheme).permit(:title, :description, :ministry_id)
   end
 end
