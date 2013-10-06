@@ -9,6 +9,7 @@ gem 'twitter-bootstrap-rails'
 gem "paperclip"
 gem "ckeditor"
 gem 'comfortable_mexican_sofa', '~> 1.9.0'
+gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
