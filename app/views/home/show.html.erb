@@ -1,15 +1,12 @@
-<%= content_for :title do %> Welcome to Vikram's site <% end %>
-<div class = 'hero-unit'>
-  <h1> Welcome to my site! </h1>
-</div>
-<div class='span6 offset3' style='text-align: center;'>
-  <h4> There will be more to see here in <%= distance_of_time_in_words_to_now('10 Dec 2013')%> </h4>
+<%= content_for :title do %> vikram.io <% end %>
+<div style='text-align: center;'>
+  <span class = 'legend'>
+    <p> <%=('10 Dec 2013'.to_date  - Date.current).to_i%> </p>
+    <span> DAYS </span>
+  </span>
   <div class="progress progress-striped active">
     <div class="bar" style="width: <%=100-('10 Dec 2013'.to_date  - Date.current ).to_i%>%;"></div>
+
   </div>
 </div>
-<script>
-  $('.progress').tooltip({title: "<%=('10 Dec 2013'.to_date  - Date.current).to_i%> days, to be precise.",
-                          placement: "bottom"
-                        });
-</script>
+<div class = 'align-helper'> </div>
